@@ -8,11 +8,11 @@ This is a basic command line application that simulates the game of blackjack. U
 
 
 
-##How to Run
+## How to Run
 This is a simple command line program. You will need to run this program within an IDE or save the file from a text editor and then run from the command line on your computer. Once a winner is determined the game ends and will need to be restarted in order to play again. 
 
  
-##Technologies Used
+## Technologies Used
 
 * Encapsulation
 * Abstract classes

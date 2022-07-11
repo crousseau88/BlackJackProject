@@ -67,10 +67,12 @@ public class BlackJackApp {
 							System.out.println("Dealer Stands");
 							System.out.println(dealer.toString());
 							System.out.println(playerOne.toString());
+							break;
 						}
 						if (dealer.getHand().getHandValue() < 17) {
 							dealer.getHand().addCard(dealer.dealCards());
 							System.out.println(dealer.toString());
+							break;
 						}
 						if (dealer.getHand().isBust()) {
 							System.out.println("Dealer busts, you win!");
