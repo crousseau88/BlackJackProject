@@ -3,7 +3,7 @@ package com.skilldistillery.blackjack.entities;
 public class Player {
 //get cards hit stay methods
 	
-	private BlackJackHand hand = new BlackJackHand();
+	private BlackJackHand blackJackHand = new BlackJackHand();
 	
 	
 	
@@ -11,7 +11,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [hand=" + hand + "]";
+		return "Player [hand=" + blackJackHand + "]";
 	}
 
 
@@ -19,7 +19,7 @@ public class Player {
 
 
 	public BlackJackHand getHand() {
-		return hand;
+		return blackJackHand;
 	}
 
 
@@ -27,7 +27,7 @@ public class Player {
 
 
 	public void setHand(BlackJackHand hand) {
-		this.hand = hand;
+		this.blackJackHand = hand;
 	}
 
 
@@ -35,6 +35,6 @@ public class Player {
 
 
 	public void hit(Card card) {
-		hand.addCard(card);
+		blackJackHand.addCard(card);
 	}
 }

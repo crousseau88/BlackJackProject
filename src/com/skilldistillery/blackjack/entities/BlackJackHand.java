@@ -33,7 +33,7 @@ public class BlackJackHand extends Hand {
 	}
 	public boolean isBust() {
 		// if hand value is over 21
-		if(((BlackJackHand) hand).getHandValue() > 21) {
+		if( this.getHandValue() > 21) {
 			return true;
 		}else {
 		return false;
