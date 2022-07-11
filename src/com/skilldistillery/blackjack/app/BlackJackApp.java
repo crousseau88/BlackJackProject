@@ -17,13 +17,13 @@ public class BlackJackApp {
 	public void play() {
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Let's play some blackjack!\n");
-		System.out.println("Dealer is dealing cards. \n");
+		
 
 		BlackJackDealer dealer = new BlackJackDealer();
 		Player playerOne = new Player();
-
+		System.out.println("The dealer is shuffling the deck \n");
 		dealer.shuffleDeck();
-
+		System.out.println("Dealer is dealing cards. \n");
 		playerOne.getHand().addCard(dealer.dealCards());
 		dealer.getHand().addCard(dealer.dealCards());
 		playerOne.getHand().addCard(dealer.dealCards());
@@ -33,7 +33,8 @@ public class BlackJackApp {
 		System.out.println("Dealer shows: " + dealer.getHand().getCard().get(1) + "\n");
 
 		if (playerOne.getHand().isBlackJack()) {
-			System.out.println(dealer.toString());
+			System.out.println(playerOne.toString() + "\n");
+			System.out.println(dealer.toString() + "\n");
 			System.out.println("BlackJack!!!! Player wins");
 		} else if (dealer.getHand().isBlackJack()) {
 			System.out.println(dealer.toString());
@@ -41,7 +42,7 @@ public class BlackJackApp {
 		} else {
 			System.out.println("Would you like to hit or stand? \n");
 
-			// loops through game
+			// loops through game until someone wins 
 			while (playerOne.getHand().getHandValue() < 22) {
 
 				String choice = kb.next();
@@ -69,17 +70,15 @@ public class BlackJackApp {
 						}
 						if (dealer.getHand().getHandValue() < 17) {
 							dealer.getHand().addCard(dealer.dealCards());
-							System.out.println("Dealer draws \n");
-							System.out.println("Dealer draws: \n" + dealer.getHand().getCard().get(2) + "\n");
 							System.out.println(dealer.toString());
 						}
 						if (dealer.getHand().isBust()) {
-							System.out.println(dealer.toString());
 							System.out.println("Dealer busts, you win!");
-							break;
+							System.out.println(dealer.toString());
+							System.exit(0);
 						}
 						if (dealer.getHand().getHandValue() == playerOne.getHand().getHandValue()) {
-							System.out.println("Push");
+							System.out.println("\n Push (tie) ");
 							break;
 						}
 					}
@@ -99,5 +98,6 @@ public class BlackJackApp {
 				}
 			}
 		}
+		kb.close();
 	}
 }

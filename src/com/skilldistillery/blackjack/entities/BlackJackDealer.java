@@ -23,7 +23,7 @@ public class BlackJackDealer extends Player {
 	
 	@Override
 	public String toString() {
-		return "BlackJackDealer: " + getHand() + "";
+		return "BlackJackDealers " + getHand() + " ";
 	}
 	public Card dealCards() {
 		return deck.dealCard();

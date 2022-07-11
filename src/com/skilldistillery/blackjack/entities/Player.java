@@ -11,7 +11,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [hand=" + blackJackHand + "]";
+		return "Players hand: " + blackJackHand + " ";
 	}
 
 
